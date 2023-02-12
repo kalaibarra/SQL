@@ -1,0 +1,28 @@
+-- Create a dog store catalog database
+
+CREATE TABLE catalog ( id INTEGER PRIMARY KEY, item TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO catalog VALUES
+(1, "dinosaurs", 8.95, 5), 
+(2, "camping", 8.95, 11),
+(3, "butterflies", 8.95, 6),
+(4, "turtles", 9, 7),
+(5, "rings", 10, 8),
+(6, "roses", 15, 3),
+(7, "balls", 3, 2),
+(8, "frisbees", 4, 9),
+(9, "blanket", 20, 10),
+(10, "rope", 5, 4),
+(11, "treats", 5, 1),
+(12, "wipes", 7, 12),
+(13, "bags", 3, 13),
+(14, "soap", 7, 15),
+(15, "spray", 10, 14);
+
+--Displayed the database order by popularity in ascending order
+
+SELECT * FROM catalog ORDER BY popularity asc;
+
+-- Calulated average price of the items in the catalog 
+
+SELECT AVG (price) FROM catalog
