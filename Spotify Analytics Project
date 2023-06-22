@@ -1,5 +1,4 @@
-#1 
-
+#1. Created Spotify Table  
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
@@ -20,34 +19,26 @@ tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL );
 
-#2
-
+#2. Determined the top 10 artist in the table
 Select artist_name, popularity 
 from bit_db.Spotifydata 
 Order by popularity 
 desc LIMIT 10;
 
-#3
-
-Select artist_name, popularity 
-from bit_db.Spotifydata 
-order by popularity  
-asc limit 10;
-
-#4 
-
+#3. Found what tracks have danceability of .7 or greater
 Select track_name, artist_name 
 from bit_db.Spotifydata 
 where danceability <= .7;
 
-#5 
-
+#4. Found what tracks have a danceability of more than .7 and more than .5 energy 
 Select track_name, artist_name, popularity 
 from bit_db.Spotifydata 
 where danceability > .7 and energy > .5 
 order by popularity desc;
 
-#6
+#5. Calculate the average popularity for the artists in the Spotify data table. 
+Then, for every artist with an average popularity of 90 or above, 
+showed their name and average popularity, and labeled them a “Top Star”
 
 with Top_Star AS (
 select s.artist_name, 
@@ -61,7 +52,9 @@ Select artist_name,
 From Top_Star
 Where Average_popularity >=90;
 
-#7 
+#6. Calculate the average popularity and danceability for the artists in the Spotify data table. 
+Then, for every artist with an average danceability of .4 or above, 
+showed their name and average popularity, and labeled them a “Dance”
 
 with artist_danceability_CTE AS (
 
