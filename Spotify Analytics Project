@@ -1,3 +1,5 @@
+#In this SQL code, I'm querying a database that's holding Spotify data to discover more about the danceability and popularity of the music. 
+
 #1. Created Spotify Table  
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
