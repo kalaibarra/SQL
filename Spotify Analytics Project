@@ -21,18 +21,18 @@ tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL );
 
-#2. Determined the top 10 artist in the table
+#2. Determine the top 10 artist on the table
 Select artist_name, popularity 
 from bit_db.Spotifydata 
 Order by popularity 
 desc LIMIT 10;
 
-#3. Found what tracks have danceability of .7 or greater
+#3. What tracks have danceability of .7 or greater?
 Select track_name, artist_name 
 from bit_db.Spotifydata 
 where danceability <= .7;
 
-#4. Found what tracks have a danceability of more than .7 and more than .5 energy 
+#4. What tracks have a danceability of more than .7 and more than .5 energy?
 Select track_name, artist_name, popularity 
 from bit_db.Spotifydata 
 where danceability > .7 and energy > .5 
