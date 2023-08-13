@@ -1,0 +1,52 @@
+#1. 
+
+select FirstName, LastName, CustomerID, Country
+from Chinook.customers
+Where Country <> "USA"
+order by LastName asc;
+
+#2. 
+
+Select distinct BillingAddress 
+from chinook.invoices
+inner join chinook.customers
+on invoices.CustomerId = customers.CustomerId;
+
+#3. 
+
+SELECT * FROM chinook.customers 
+WHERE Country = "Brazil"; 
+
+#4. 
+
+Select cust.firstname, cust.lastname, inv.invoiceid, inv.invoicedate, inv.billingcountry 
+from chinook.invoices inv
+left join chinook.customers cust
+on inv.customerid=cust.customerid
+where inv.billingcountry = "Brazil";
+
+#5. 
+
+Select *
+from chinook.employees
+where Title = "Sales Support Agent";
+
+#6. 
+
+Select distinct billingcountry from chinook.invoices;
+
+#7. 
+
+Select emp.LastName, emp.FirstName, inv.InvoiceID
+from chinook.Employees emp
+join chinook.customers cust on cust.supportrepid=emp.employeeid
+join chinook.invoices inv on inv.customerid = cust.CustomerId;
+
+#8. 
+
+Select inv.Total, cust.LastName, cust.FirstName, cust.Country, emp.LastName, emp.FirstName
+from chinook.invoices inv 
+join chinook.customers cust on cust.customerid=inv.invoiceid
+join chinook.employees emp on emp.employeeid=cust.supportrepid;
+
+Select count (*) from chinook.invoices where invoicedate between '2009-01-01' and '2009-12-31';
