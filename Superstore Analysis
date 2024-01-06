@@ -1,5 +1,13 @@
-#In this query, I am 
+#In this SQL code, I'm querying a database that's holding Superstore data to answer questions about the data. 
+
+#1 Select all items and order it by price
 select * from superstore order by price;
+
+#2 Find the sum of stock that is in the store
 select sum (stock_quantity) from superstore;
+
+#3 Find the average price of the Kitchen Supply category 
 select avg (price) from superstore where category= 'Kitchen Supplies';
+
+#4 Select all electronic items and organize them by price
 Select * from superstore where category = 'Electronics' order by price;
