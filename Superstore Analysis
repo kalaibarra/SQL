@@ -1,0 +1,5 @@
+#In this query, I am 
+select * from superstore order by price;
+select sum (stock_quantity) from superstore;
+select avg (price) from superstore where category= 'Kitchen Supplies';
+Select * from superstore where category = 'Electronics' order by price;
